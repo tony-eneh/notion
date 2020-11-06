@@ -1,4 +1,4 @@
-export const ellipse = (props) => (
+export const Ellipse = (props) => (
   <>
     <label>
       radiusX:

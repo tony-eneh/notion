@@ -1,4 +1,4 @@
-export const circle = (props) => (
+export const Circle = (props) => (
   <>
     <label>
       Radius:

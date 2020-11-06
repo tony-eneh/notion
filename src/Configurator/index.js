@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./configurator.css";
-import { circle } from "./circle";
-import { ellipse } from "./ellipse";
+import { Circle } from "./Circle";
+import { Ellipse } from "./Ellipse";
 
 export class Configurator extends Component {
   // shape type is an enum which can hold one of the following values
-  // circle, ellipse, square, rectangle, triangle, rhombus, parallelogram, trapezium, polygon, kite or star
+  // Circle, Ellipse, Square, Rectangle, Triangle, Rhombus, Parallelogram, Trapezium, Polygon, Kite or Star
   // configInfo is an object which has the above shapes as properties whose
-  state = { shape: "circle", configInfo: { circle, ellipse } };
+  state = { shape: "Circle", configInfo: { Circle, Ellipse } };
   render() {
     return (
       <form className="configurator">
