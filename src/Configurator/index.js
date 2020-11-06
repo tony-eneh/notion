@@ -4,6 +4,7 @@ import { Circle } from "./Circle";
 import { Ellipse } from "./Ellipse";
 import { Square } from "./Square";
 import { Rectangle } from "./Rectangle";
+import { Kite } from "./Kite";
 
 export class Configurator extends Component {
   // shape type is an enum which can hold one of the following values
@@ -11,7 +12,7 @@ export class Configurator extends Component {
   // configInfo is an object which has the above shapes as properties whose
   state = {
     shape: "Circle",
-    configInfo: { Circle, Ellipse, Square, Rectangle },
+    configInfo: { Circle, Ellipse, Square, Rectangle, Kite },
   };
   render() {
     return (
