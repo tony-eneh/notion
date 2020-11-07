@@ -10,6 +10,7 @@ import { Polygon } from "./Polygon";
 import { Rhombus } from "./Rhombus";
 import { Star } from "./Star";
 import { Trapezium } from "./Trapezium";
+import { Triangle } from "./Triangle";
 
 export class Configurator extends Component {
   // shape type is an enum which can hold one of the following values
@@ -28,6 +29,7 @@ export class Configurator extends Component {
       Rhombus,
       Star,
       Trapezium,
+      Triangle,
     },
   };
   render() {
