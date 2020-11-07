@@ -80,8 +80,8 @@ export class Configurator extends Component {
           value={this.state.shape}
           onChange={this.handleShapeChange}
         >
-          {Object.keys(this.state.configInfo).map((shape) => (
-            <option>{shape}</option>
+          {Object.keys(this.state.configInfo).map((shape, id) => (
+            <option key={id}>{shape}</option>
           ))}
         </select>
         {/* render the inputs peculiar to the current shape inside the fieldset below */}
