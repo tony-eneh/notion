@@ -5,7 +5,7 @@ export const Ellipse = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-radius-x
+        name="radiusX"
         onChange={props.onChange}
         defaultValue="50"
       />
@@ -15,7 +15,7 @@ export const Ellipse = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-radius-y
+        name="radiusY"
         onChange={props.onChange}
         defaultValue="25"
       />

@@ -5,7 +5,7 @@ export const Parallelogram = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-side-a
+        name="sideA"
         onChange={props.onChange}
         defaultValue="50"
       />
@@ -15,7 +15,7 @@ export const Parallelogram = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-side-b
+        name="sideB"
         onChange={props.onChange}
         defaultValue="20"
       />
@@ -25,7 +25,7 @@ export const Parallelogram = (props) => (
       {/* number input type with default value and a max and min angle values*/}
       <input
         type="number"
-        data-base-angle
+        name="baseAngle"
         onChange={props.onChange}
         defaultValue="45"
         max="179"

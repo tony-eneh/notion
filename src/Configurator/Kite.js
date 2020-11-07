@@ -5,7 +5,7 @@ export const Kite = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-front-side-length
+        name="frontSideLength"
         onChange={props.onChange}
         defaultValue="20"
       />
@@ -15,7 +15,7 @@ export const Kite = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-back-side-length
+        name="backSideLength"
         onChange={props.onChange}
         defaultValue="50"
       />
@@ -25,7 +25,7 @@ export const Kite = (props) => (
       {/* number input type with default value and a max and min angle values*/}
       <input
         type="number"
-        data-tip-angle
+        name="tipAngle"
         onChange={props.onChange}
         defaultValue="90"
         max="179"

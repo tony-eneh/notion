@@ -5,7 +5,7 @@ export const Star = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-number-of-points
+        name="numberOfPoints"
         onChange={props.onChange}
         defaultValue="5"
       />
@@ -15,7 +15,7 @@ export const Star = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-outer-radius
+        name="outerRadius"
         onChange={props.onChange}
         defaultValue="50"
       />
@@ -25,7 +25,7 @@ export const Star = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-inner-radius
+        name="innerRadius"
         onChange={props.onChange}
         defaultValue="20"
       />

@@ -5,7 +5,7 @@ export const Circle = (props) => (
       {/* number input type with default value of 50*/}
       <input
         type="number"
-        data-radius
+        name="radius"
         onChange={props.onChange}
         defaultValue="50"
       />

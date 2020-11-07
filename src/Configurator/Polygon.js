@@ -5,7 +5,7 @@ export const Polygon = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-number-of-sides
+        name="numberOfSides"
         onChange={props.onChange}
         defaultValue="5"
       />
@@ -15,7 +15,7 @@ export const Polygon = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        data-side-length
+        name="sideLength"
         onChange={props.onChange}
         defaultValue="50"
       />
