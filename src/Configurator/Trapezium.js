@@ -1,3 +1,10 @@
+export const DEFAULT_VALUES = {
+  sideA: 50,
+  sideB: 30,
+  height: 20,
+  baseAngle: 45,
+};
+
 export const Trapezium = (props) => (
   <>
     <label>
@@ -7,7 +14,7 @@ export const Trapezium = (props) => (
         type="number"
         name="sideA"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.sideA}
       />
     </label>
     <label>
@@ -17,7 +24,7 @@ export const Trapezium = (props) => (
         type="number"
         name="sideB"
         onChange={props.onChange}
-        defaultValue="30"
+        defaultValue={DEFAULT_VALUES.sideB}
       />
     </label>
     <label>
@@ -27,7 +34,7 @@ export const Trapezium = (props) => (
         type="number"
         name="height"
         onChange={props.onChange}
-        defaultValue="20"
+        defaultValue={DEFAULT_VALUES.height}
       />
     </label>
     <label>
@@ -37,7 +44,7 @@ export const Trapezium = (props) => (
         type="number"
         name="baseAngle"
         onChange={props.onChange}
-        defaultValue="45"
+        defaultValue={DEFAULT_VALUES.baseAngle}
         max="90"
         min="1"
       />

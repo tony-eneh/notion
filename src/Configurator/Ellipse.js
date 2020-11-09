@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { radiusX: 50, radiusY: 25 };
+
 export const Ellipse = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Ellipse = (props) => (
         type="number"
         name="radiusX"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.radiusX}
       />
     </label>
     <label>
@@ -17,7 +19,7 @@ export const Ellipse = (props) => (
         type="number"
         name="radiusY"
         onChange={props.onChange}
-        defaultValue="25"
+        defaultValue={DEFAULT_VALUES.radiusY}
       />
     </label>
   </>

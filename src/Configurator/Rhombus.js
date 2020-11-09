@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { side: 50, baseAngle: 45 };
+
 export const Rhombus = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Rhombus = (props) => (
         type="number"
         name="side"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.side}
       />
     </label>
     <label>
@@ -17,7 +19,7 @@ export const Rhombus = (props) => (
         type="number"
         name="baseAngle"
         onChange={props.onChange}
-        defaultValue="45"
+        defaultValue={DEFAULT_VALUES.baseAngle}
         max="179"
         min="1"
       />

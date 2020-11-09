@@ -1,3 +1,9 @@
+export const DEFAULT_VALUES = {
+  frontSideLength: 20,
+  backSideLength: 50,
+  tipAngle: 90,
+};
+
 export const Kite = (props) => (
   <>
     <label>
@@ -7,7 +13,7 @@ export const Kite = (props) => (
         type="number"
         name="frontSideLength"
         onChange={props.onChange}
-        defaultValue="20"
+        defaultValue={DEFAULT_VALUES.frontSideLength}
       />
     </label>
     <label>
@@ -17,7 +23,7 @@ export const Kite = (props) => (
         type="number"
         name="backSideLength"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.backSideLength}
       />
     </label>
     <label>
@@ -27,7 +33,7 @@ export const Kite = (props) => (
         type="number"
         name="tipAngle"
         onChange={props.onChange}
-        defaultValue="90"
+        defaultValue={DEFAULT_VALUES.tipAngle}
         max="179"
         min="1"
       />

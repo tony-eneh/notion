@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { radius: 50 };
+
 export const Circle = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Circle = (props) => (
         type="number"
         name="radius"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.radius}
       />
     </label>
   </>

@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { numberOfSides: 5, sideLength: 50 };
+
 export const Polygon = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Polygon = (props) => (
         type="number"
         name="numberOfSides"
         onChange={props.onChange}
-        defaultValue="5"
+        defaultValue={DEFAULT_VALUES.numberOfSides}
       />
     </label>
     <label>
@@ -17,7 +19,7 @@ export const Polygon = (props) => (
         type="number"
         name="sideLength"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.sideLength}
       />
     </label>
   </>

@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { length: 50, width: 20 };
+
 export const Rectangle = (props) => (
   <>
     <label>
@@ -5,9 +7,9 @@ export const Rectangle = (props) => (
       {/* number input type with default value*/}
       <input
         type="number"
-        name="Length"
+        name="length"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.length}
       />
     </label>
     <label>
@@ -17,7 +19,7 @@ export const Rectangle = (props) => (
         type="number"
         name="width"
         onChange={props.onChange}
-        defaultValue="20"
+        defaultValue={DEFAULT_VALUES.width}
       />
     </label>
   </>

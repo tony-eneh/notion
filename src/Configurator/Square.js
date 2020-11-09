@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { side: 50 };
+
 export const Square = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Square = (props) => (
         type="number"
         name="side"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.side}
       />
     </label>
   </>

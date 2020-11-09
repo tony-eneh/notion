@@ -1,3 +1,9 @@
+export const DEFAULT_VALUES = {
+  numberOfPoints: 5,
+  outerRadius: 50,
+  innerRadius: 20,
+};
+
 export const Star = (props) => (
   <>
     <label>
@@ -7,7 +13,7 @@ export const Star = (props) => (
         type="number"
         name="numberOfPoints"
         onChange={props.onChange}
-        defaultValue="5"
+        defaultValue={DEFAULT_VALUES.numberOfPoints}
       />
     </label>
     <label>
@@ -17,7 +23,7 @@ export const Star = (props) => (
         type="number"
         name="outerRadius"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.outerRadius}
       />
     </label>
     <label>
@@ -27,7 +33,7 @@ export const Star = (props) => (
         type="number"
         name="innerRadius"
         onChange={props.onChange}
-        defaultValue="20"
+        defaultValue={DEFAULT_VALUES.innerRadius}
       />
     </label>
   </>

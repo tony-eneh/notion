@@ -1,3 +1,5 @@
+export const DEFAULT_VALUES = { sideA: 50, sideB: 20, baseAngle: 45 };
+
 export const Parallelogram = (props) => (
   <>
     <label>
@@ -7,7 +9,7 @@ export const Parallelogram = (props) => (
         type="number"
         name="sideA"
         onChange={props.onChange}
-        defaultValue="50"
+        defaultValue={DEFAULT_VALUES.sideA}
       />
     </label>
     <label>
@@ -17,7 +19,7 @@ export const Parallelogram = (props) => (
         type="number"
         name="sideB"
         onChange={props.onChange}
-        defaultValue="20"
+        defaultValue={DEFAULT_VALUES.sideB}
       />
     </label>
     <label>
@@ -27,7 +29,7 @@ export const Parallelogram = (props) => (
         type="number"
         name="baseAngle"
         onChange={props.onChange}
-        defaultValue="45"
+        defaultValue={DEFAULT_VALUES.baseAngle}
         max="179"
         min="1"
       />
