@@ -1,31 +1,8 @@
 import React, { Component } from "react";
 import "./configurator.css";
-import { Circle } from "./Circle";
-import { Ellipse } from "./Ellipse";
-import { Square } from "./Square";
-import { Rectangle } from "./Rectangle";
-import { Kite } from "./Kite";
-import { Parallelogram } from "./Parallelogram";
-import { Polygon } from "./Polygon";
-import { Rhombus } from "./Rhombus";
-import { Star } from "./Star";
-import { Trapezium } from "./Trapezium";
-import { Triangle } from "./Triangle";
+import { configFields, defaultValues } from "./Shapes";
 
-// put all shapes in an for easier rendering of the UI dynamically
-const configInfo = {
-  Circle,
-  Ellipse,
-  Square,
-  Rectangle,
-  Kite,
-  Parallelogram,
-  Polygon,
-  Rhombus,
-  Star,
-  Trapezium,
-  Triangle,
-};
+// put all shapes in an for easier rendering of the UI dynamicall
 
 export class Configurator extends Component {
   constructor(props) {
@@ -34,24 +11,11 @@ export class Configurator extends Component {
     this.handleShapeChange = this.handleShapeChange.bind(this);
     this.handleShapeDetailsChange = this.handleShapeDetailsChange.bind(this);
   }
-  // shape type is an enum which can hold one of the following values
-  // Circle, Ellipse, Square, Rectangle, Triangle, Rhombus, Parallelogram, Trapezium, Polygon, Kite or Star
-  // configInfo is an object which has the above shapes as properties whose
+
   state = {
     shape: "Circle",
-
     // state objects to hold the values of the inputs
-    Circle: {},
-    Ellipse: {},
-    Square: {},
-    Rectangle: {},
-    Kite: {},
-    Parallelogram: {},
-    Polygon: {},
-    Rhombus: {},
-    Star: {},
-    Trapezium: {},
-    Triangle: {},
+    ...defaultValues,
   };
 
   handleShapeChange(e) {
@@ -80,14 +44,14 @@ export class Configurator extends Component {
           value={this.state.shape}
           onChange={this.handleShapeChange}
         >
-          {Object.keys(configInfo).map((shape, id) => (
+          {Object.keys(configFields).map((shape, id) => (
             <option key={id}>{shape}</option>
           ))}
         </select>
         {/* render the inputs peculiar to the current shape inside the fieldset below */}
         {/* pass in a change handler for any change in inputs */}
         <fieldset>
-          {React.createElement(configInfo[this.state.shape], {
+          {React.createElement(configFields[this.state.shape], {
             onChange: this.handleShapeDetailsChange,
           })}
         </fieldset>
