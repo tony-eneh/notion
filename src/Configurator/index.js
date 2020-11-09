@@ -25,7 +25,8 @@ export class Configurator extends Component {
   handleShapeDetailsChange(e) {
     const currentShape = this.state[this.state.shape];
 
-    currentShape[e.target.name] = e.target.value;
+    // ensured type consistency by casting value to number before assigning
+    currentShape[e.target.name] = +e.target.value;
 
     this.setState({ [currentShape]: currentShape });
     console.log("you changed a value");
