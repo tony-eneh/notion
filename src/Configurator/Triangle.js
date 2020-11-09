@@ -3,15 +3,20 @@ import { Component } from "react";
 export class Triangle extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...props, type: "EQUILATERAL" };
-    this.handleTypeChange = this.handleTypeChange.bind(this);
+    this.state = { type: "EQUILATERAL" };
+    this.handleChange = this.props.onChange.bind(this);
+    this.setType = this.setType.bind(this);
+
+    // set initial type
+    // the weird embedding is because handleChange is expecting a DOM object e.
+    // from which it can read e.target.value
+    this.handleChange({ target: { name: "type", value: "EQUILATERAL" } });
   }
 
-  handleTypeChange(e) {
+  setType(e) {
     this.setState({ type: e.target.value });
+    this.handleChange(e);
   }
-
-  handleValueChange(e) {}
 
   render() {
     return (
@@ -19,7 +24,7 @@ export class Triangle extends Component {
         <label>
           Type:
           {/* number input type with default value*/}
-          <select data-type-of-triangle onChange={this.handleTypeChange}>
+          <select name="type" onChange={this.setType}>
             <option value="EQUILATERAL">equilateral</option>
             <option value="ISOSCELES">isosceles</option>
             <option value="SCALENE">scalene</option>
@@ -30,8 +35,8 @@ export class Triangle extends Component {
           {/* number input type with default value*/}
           <input
             type="number"
-            data-side-a
-            onChange={this.handleValueChange}
+            name="sideA"
+            onChange={this.handleChange}
             defaultValue="50"
           />
         </label>
@@ -41,9 +46,9 @@ export class Triangle extends Component {
             Side B:
             <input
               type="number"
-              data-side-b
-              onChange={this.handleValueChange}
-              value="50"
+              name="sideB"
+              onChange={this.handleChange}
+              defaultValue="50"
             />
           </label>
         )}
@@ -53,8 +58,8 @@ export class Triangle extends Component {
             Side C:
             <input
               type="number"
-              data-side-c
-              onChange={this.handleValueChange}
+              name="sideC"
+              onChange={this.handleChange}
               defaultValue="50"
             />
           </label>
