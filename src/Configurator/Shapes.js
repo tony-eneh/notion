@@ -1,5 +1,5 @@
 import circle, { Circle } from "./Circle";
-import { Ellipse, DEFAULT_VALUES as ellipseDefaults } from "./Ellipse";
+import ellipse, { Ellipse } from "./Ellipse";
 import { Square, DEFAULT_VALUES as squareDefaults } from "./Square";
 import { Rectangle, DEFAULT_VALUES as rectangleDefaults } from "./Rectangle";
 import { Kite, DEFAULT_VALUES as kiteDefaults } from "./Kite";
@@ -16,7 +16,7 @@ import { Triangle, DEFAULT_VALUES as triangleDefaults } from "./Triangle";
 // the default values as defined in the diff configuration files
 export const defaultValues = {
   Circle: circle.DEFAULT_VALUES,
-  Ellipse: ellipseDefaults,
+  Ellipse: ellipse.DEFAULT_VALUES,
   Square: squareDefaults,
   Rectangle: rectangleDefaults,
   Kite: kiteDefaults,
@@ -46,7 +46,7 @@ export const configFields = {
 // these functions convert the parameters of these shapes into commands which can be passed to the d attribute of path element to draw the shape
 export const dFunctions = {
   Circle: circle.getD,
-  Ellipse,
+  Ellipse: ellipse.getD,
   Square,
   Rectangle,
   Kite,
