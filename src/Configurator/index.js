@@ -4,13 +4,13 @@ import { configFields } from "./Shapes";
 
 // put all shapes in an for easier rendering of the UI dynamicall
 
-export const Configurator = () => {
+export const Configurator = (props) => {
   return (
     <form className="configurator">
       <select
         type="select"
-        value={this.props.data.shape}
-        onChange={(e) => this.props.setShape(e.target.value)}
+        value={props.data.shape}
+        onChange={(e) => props.setShape(e.target.value)}
       >
         {Object.keys(configFields).map((shape, id) => (
           <option key={id}>{shape}</option>
@@ -19,12 +19,12 @@ export const Configurator = () => {
       {/* render the inputs peculiar to the current shape inside the fieldset below */}
       {/* pass in a change handler for any change in inputs */}
       <fieldset>
-        {React.createElement(configFields[this.props.data.shape], {
+        {React.createElement(configFields[props.data.shape], {
           onChange: (e) => {
             // create a detail object which identifies what changed and the new value
             // use the callback from parent to register the change
             const detail = { [e.target.name]: +e.target.value };
-            this.props.setDetails(detail);
+            props.setDetails(detail);
           },
         })}
       </fieldset>
