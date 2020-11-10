@@ -1,12 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Header } from "./Header";
 import { Configurator } from "./Configurator";
 import { SVGDisplay } from "./SVGDisplay";
 import { Component } from "react";
-import { getD } from "./Configurator/Circle";
 import { CENTER } from "./constants";
-import { configFields, defaultValues } from "./Configurator/Shapes";
+import { defaultValues, dFunctions } from "./Configurator/Shapes";
 
 class App extends Component {
   constructor(props) {
@@ -14,10 +12,17 @@ class App extends Component {
     this.state = { shape: "Circle", details: {} };
     this.handleShape = this.handleShape.bind(this);
     this.handleDetails = this.handleDetails.bind(this);
+    this.initializeInputs = this.initializeInputs.bind(this);
+    this.generateD = this.generateD.bind(this);
+  }
+
+  generateD() {
+    // convert the shape details to d attribute value
+    return dFunctions[this.state.shape]({ ...CENTER, ...this.state.details });
   }
 
   initializeInputs() {
-    // get the values for the currently selected shape and set state with it
+    // get the default details for the currently selected shape and set them
     this.setState({ details: defaultValues[this.state.shape] });
   }
 
@@ -52,7 +57,7 @@ class App extends Component {
           setDetails={this.handleDetails}
           data={this.state}
         />
-        <SVGDisplay d={this.state.d} />
+        <SVGDisplay d={this.generateD()} />
       </div>
     );
   }
