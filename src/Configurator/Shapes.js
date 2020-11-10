@@ -1,6 +1,6 @@
 import circle, { Circle } from "./Circle";
 import ellipse, { Ellipse } from "./Ellipse";
-import { Square, DEFAULT_VALUES as squareDefaults } from "./Square";
+import square, { Square } from "./Square";
 import { Rectangle, DEFAULT_VALUES as rectangleDefaults } from "./Rectangle";
 import { Kite, DEFAULT_VALUES as kiteDefaults } from "./Kite";
 import {
@@ -17,7 +17,7 @@ import { Triangle, DEFAULT_VALUES as triangleDefaults } from "./Triangle";
 export const defaultValues = {
   Circle: circle.DEFAULT_VALUES,
   Ellipse: ellipse.DEFAULT_VALUES,
-  Square: squareDefaults,
+  Square: square.DEFAULT_VALUES,
   Rectangle: rectangleDefaults,
   Kite: kiteDefaults,
   Parallelogram: parallelogramDefaults,
@@ -47,7 +47,7 @@ export const configFields = {
 export const dFunctions = {
   Circle: circle.getD,
   Ellipse: ellipse.getD,
-  Square,
+  Square: square.getD,
   Rectangle,
   Kite,
   Parallelogram,

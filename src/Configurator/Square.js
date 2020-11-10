@@ -14,3 +14,15 @@ export const Square = (props) => (
     </label>
   </>
 );
+
+export function getD(data) {
+  const { cx, cy, side } = data;
+  const d = `M ${cx - 0.5 * side}, ${cy - 0.5 * side}
+   h${side} v${side} h-${side}z`;
+
+  return d;
+}
+
+const square = { Square, DEFAULT_VALUES, getD };
+
+export default square;
