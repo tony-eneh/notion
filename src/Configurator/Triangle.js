@@ -2,9 +2,9 @@ import { Component } from "react";
 
 export const DEFAULT_VALUES = {
   type: "EQUILATERAL",
-  sideA: 50,
-  sideB: 30,
-  sideC: 20,
+  sideA: 80,
+  sideB: 60,
+  sideC: 40,
 };
 export class Triangle extends Component {
   constructor(props) {
@@ -101,12 +101,12 @@ function getPoints(data) {
   switch (type) {
     case "SCALENE":
       return {
-        x1: "",
-        y1: "",
-        x2: "",
-        y2: "",
-        x3: "",
-        y3: "",
+        x1: cx - 0.5 * sideA,
+        y1: cy + 0.5 * sideA * Math.tan(Math.PI / 6),
+        x2: sideB * Math.cos(angleC),
+        y2: -(sideB * Math.sin(angleC)),
+        x3: sideC * Math.cos(angleB),
+        y3: sideC * Math.sin(angleB),
       };
     case "ISOSCELES":
       return {
