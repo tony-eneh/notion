@@ -74,3 +74,49 @@ export class Triangle extends Component {
     );
   }
 }
+
+function getPoints(data) {
+  const { cx, cy, type, sideA, sideB, sideC } = data;
+
+  switch (type) {
+    case "SCALENE":
+      return {
+        x1: "",
+        y1: "",
+        x2: "",
+        y2: "",
+        x3: "",
+        y3: "",
+      };
+    case "ISOSCELES":
+      return {
+        x1: "",
+        y1: "",
+        x2: "",
+        y2: "",
+        x3: "",
+        y3: "",
+      };
+    default:
+      // case EQUILATERAL
+      return {
+        x1: cx - 0.5 * sideA,
+        y1: cy + 0.5 * sideA * Math.tan(Math.PI / 6) /* 30degs */,
+        x2: 0.5 * sideA,
+        y2: -0.5 * sideA * Math.tan(Math.PI / 3) /* 60degs */,
+        x3: 0.5 * sideA,
+        y3: 0.5 * sideA * Math.tan(Math.PI / 3) /* 60degs */,
+      };
+  }
+}
+
+export function getD(data) {
+  const { x1, y1, x2, y2, x3, y3 } = getPoints(data);
+  const d = `M${x1} ${y1} l${x2} ${y2} l${x3} ${y3}z`;
+
+  return d;
+}
+
+const triangle = { Triangle, DEFAULT_VALUES, getD };
+
+export default triangle;

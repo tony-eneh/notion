@@ -8,7 +8,7 @@ import { Polygon, DEFAULT_VALUES as polygonDefaults } from "./Polygon";
 import rhombus, { Rhombus } from "./Rhombus";
 import { Star, DEFAULT_VALUES as starDefaults } from "./Star";
 import trapezium, { Trapezium } from "./Trapezium";
-import { Triangle, DEFAULT_VALUES as triangleDefaults } from "./Triangle";
+import triangle, { Triangle } from "./Triangle";
 
 // the default values as defined in the diff configuration files
 export const defaultValues = {
@@ -22,7 +22,7 @@ export const defaultValues = {
   Rhombus: rhombus.DEFAULT_VALUES,
   Star: starDefaults,
   Trapezium: trapezium.DEFAULT_VALUES,
-  Triangle: triangleDefaults,
+  Triangle: triangle.DEFAULT_VALUES,
 };
 
 // the config input fields for each component
@@ -52,5 +52,5 @@ export const dFunctions = {
   Rhombus: rhombus.getD,
   Star,
   Trapezium: trapezium.getD,
-  Triangle,
+  Triangle: triangle.getD,
 };
