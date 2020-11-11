@@ -2,7 +2,7 @@ import circle, { Circle } from "./Circle";
 import ellipse, { Ellipse } from "./Ellipse";
 import square, { Square } from "./Square";
 import rectangle, { Rectangle } from "./Rectangle";
-import { Kite, DEFAULT_VALUES as kiteDefaults } from "./Kite";
+import kite, { Kite } from "./Kite";
 import parallelogram, { Parallelogram } from "./Parallelogram";
 import { Polygon, DEFAULT_VALUES as polygonDefaults } from "./Polygon";
 import rhombus, { Rhombus } from "./Rhombus";
@@ -16,7 +16,7 @@ export const defaultValues = {
   Ellipse: ellipse.DEFAULT_VALUES,
   Square: square.DEFAULT_VALUES,
   Rectangle: rectangle.DEFAULT_VALUES,
-  Kite: kiteDefaults,
+  Kite: kite.DEFAULT_VALUES,
   Parallelogram: parallelogram.DEFAULT_VALUES,
   Polygon: polygonDefaults,
   Rhombus: rhombus.DEFAULT_VALUES,
@@ -46,7 +46,7 @@ export const dFunctions = {
   Ellipse: ellipse.getD,
   Square: square.getD,
   Rectangle: rectangle.getD,
-  Kite,
+  Kite: kite.getD,
   Parallelogram: parallelogram.getD,
   Polygon,
   Rhombus: rhombus.getD,
