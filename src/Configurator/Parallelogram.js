@@ -36,3 +36,26 @@ export const Parallelogram = (props) => (
     </label>
   </>
 );
+
+function polarToCartesian(side, angleInDegrees) {
+  const angleInRadians = (angleInDegrees * Math.PI) / 180;
+  return {
+    x: side * Math.cos(angleInRadians),
+    y: side * Math.sin(angleInRadians),
+  };
+}
+
+export function getD(data) {
+  const { cx, cy, sideA, sideB, baseAngle } = data;
+  // get third points down
+  // used Math.abs to convert negative values to positive before using (an edge case)
+  const { x, y } = polarToCartesian(sideB, Math.abs(baseAngle));
+  const d = `M ${cx - 0.5 * sideA}, ${cy + 0.5 * sideB}
+   h${sideA} l${x} ${-y} h-${sideA}z`;
+
+  return d;
+}
+
+const parallelogram = { Parallelogram, DEFAULT_VALUES, getD };
+
+export default parallelogram;
