@@ -6,7 +6,7 @@ import kite, { Kite } from "./Kite";
 import parallelogram, { Parallelogram } from "./Parallelogram";
 import polygon, { Polygon } from "./Polygon";
 import rhombus, { Rhombus } from "./Rhombus";
-import { Star, DEFAULT_VALUES as starDefaults } from "./Star";
+import star, { Star } from "./Star";
 import trapezium, { Trapezium } from "./Trapezium";
 import triangle, { Triangle } from "./Triangle";
 
@@ -20,7 +20,7 @@ export const defaultValues = {
   Parallelogram: parallelogram.DEFAULT_VALUES,
   Polygon: polygon.DEFAULT_VALUES,
   Rhombus: rhombus.DEFAULT_VALUES,
-  Star: starDefaults,
+  Star: star.DEFAULT_VALUES,
   Trapezium: trapezium.DEFAULT_VALUES,
   Triangle: triangle.DEFAULT_VALUES,
 };
@@ -50,7 +50,7 @@ export const dFunctions = {
   Parallelogram: parallelogram.getD,
   Polygon: polygon.getD,
   Rhombus: rhombus.getD,
-  Star,
+  Star: star.getD,
   Trapezium: trapezium.getD,
   Triangle: triangle.getD,
 };
