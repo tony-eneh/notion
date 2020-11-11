@@ -34,6 +34,18 @@ class App extends Component {
   }
 
   handleDetails(detail) {
+    // handle negative value edge case. Just convert to a positive number of same magnitude
+    // convert to array
+    console.log("object detail", detail);
+    detail = Object.entries(detail);
+    console.log("entries detail", detail);
+    // if the detail is a number, change it to a positive number
+    detail[0][1] =
+      typeof detail[0][1] === "number" ? Math.abs(detail[0][1]) : detail[0][1];
+    // convert detail back to an object
+    console.log("absed entries detail", detail);
+    // detail.length = 1;
+    detail = Object.fromEntries([detail[0]]);
     // create a new details object with new value merged in
     const details = { ...this.state.details, ...detail };
     this.setState({ details });
