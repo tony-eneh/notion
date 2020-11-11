@@ -51,3 +51,24 @@ export const Trapezium = (props) => (
     </label>
   </>
 );
+
+function polarToCartesian(height, angleInDegrees) {
+  const angleInRadians = (angleInDegrees * Math.PI) / 180;
+  return {
+    x: height / Math.tan(angleInRadians),
+    y: height,
+  };
+}
+
+export function getD(data) {
+  const { cx, cy, sideA, sideB, height, baseAngle } = data;
+  const { x, y } = polarToCartesian(height, baseAngle);
+  const d = `M ${cx + 0.5 * sideA}, ${cy + 0.5 * height}
+   h-${sideA} l${x} ${-y} h${sideB}z`;
+
+  return d;
+}
+
+const trapezium = { Trapezium, DEFAULT_VALUES, getD };
+
+export default trapezium;

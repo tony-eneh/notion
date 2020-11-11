@@ -7,7 +7,7 @@ import parallelogram, { Parallelogram } from "./Parallelogram";
 import { Polygon, DEFAULT_VALUES as polygonDefaults } from "./Polygon";
 import rhombus, { Rhombus } from "./Rhombus";
 import { Star, DEFAULT_VALUES as starDefaults } from "./Star";
-import { Trapezium, DEFAULT_VALUES as trapeziumDefaults } from "./Trapezium";
+import trapezium, { Trapezium } from "./Trapezium";
 import { Triangle, DEFAULT_VALUES as triangleDefaults } from "./Triangle";
 
 // the default values as defined in the diff configuration files
@@ -21,7 +21,7 @@ export const defaultValues = {
   Polygon: polygonDefaults,
   Rhombus: rhombus.DEFAULT_VALUES,
   Star: starDefaults,
-  Trapezium: trapeziumDefaults,
+  Trapezium: trapezium.DEFAULT_VALUES,
   Triangle: triangleDefaults,
 };
 
@@ -51,6 +51,6 @@ export const dFunctions = {
   Polygon,
   Rhombus: rhombus.getD,
   Star,
-  Trapezium,
+  Trapezium: trapezium.getD,
   Triangle,
 };
