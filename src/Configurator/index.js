@@ -23,7 +23,7 @@ export const Configurator = (props) => {
           onChange: (e) => {
             // create a detail object which identifies what changed and the new value
             // use the callback from parent to register the change
-            const detail = { [e.target.name]: +e.target.value };
+            const detail = { [e.target.name]: e.target.value };
             props.setDetails(detail);
           },
         })}

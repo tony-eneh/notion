@@ -24,3 +24,15 @@ export const Rectangle = (props) => (
     </label>
   </>
 );
+
+export function getD(data) {
+  const { cx, cy, length, width } = data;
+  const d = `M ${cx - 0.5 * length}, ${cy - 0.5 * width}
+   h${length} v${width} h-${length}z`;
+
+  return d;
+}
+
+const rectangle = { Rectangle, DEFAULT_VALUES, getD };
+
+export default rectangle;

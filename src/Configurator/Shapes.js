@@ -1,31 +1,28 @@
-import { Circle, DEFAULT_VALUES as circleDefaults } from "./Circle";
-import { Ellipse, DEFAULT_VALUES as ellipseDefaults } from "./Ellipse";
-import { Square, DEFAULT_VALUES as squareDefaults } from "./Square";
-import { Rectangle, DEFAULT_VALUES as rectangleDefaults } from "./Rectangle";
-import { Kite, DEFAULT_VALUES as kiteDefaults } from "./Kite";
-import {
-  Parallelogram,
-  DEFAULT_VALUES as parallelogramDefaults,
-} from "./Parallelogram";
-import { Polygon, DEFAULT_VALUES as polygonDefaults } from "./Polygon";
-import { Rhombus, DEFAULT_VALUES as rhombusDefaults } from "./Rhombus";
-import { Star, DEFAULT_VALUES as starDefaults } from "./Star";
-import { Trapezium, DEFAULT_VALUES as trapeziumDefaults } from "./Trapezium";
-import { Triangle, DEFAULT_VALUES as triangleDefaults } from "./Triangle";
+import circle, { Circle } from "./Circle";
+import ellipse, { Ellipse } from "./Ellipse";
+import square, { Square } from "./Square";
+import rectangle, { Rectangle } from "./Rectangle";
+import kite, { Kite } from "./Kite";
+import parallelogram, { Parallelogram } from "./Parallelogram";
+import polygon, { Polygon } from "./Polygon";
+import rhombus, { Rhombus } from "./Rhombus";
+import star, { Star } from "./Star";
+import trapezium, { Trapezium } from "./Trapezium";
+import triangle, { Triangle } from "./Triangle";
 
 // the default values as defined in the diff configuration files
 export const defaultValues = {
-  Circle: circleDefaults,
-  Ellipse: ellipseDefaults,
-  Square: squareDefaults,
-  Rectangle: rectangleDefaults,
-  Kite: kiteDefaults,
-  Parallelogram: parallelogramDefaults,
-  Polygon: polygonDefaults,
-  Rhombus: rhombusDefaults,
-  Star: starDefaults,
-  Trapezium: trapeziumDefaults,
-  Triangle: triangleDefaults,
+  Circle: circle.DEFAULT_VALUES,
+  Ellipse: ellipse.DEFAULT_VALUES,
+  Square: square.DEFAULT_VALUES,
+  Rectangle: rectangle.DEFAULT_VALUES,
+  Kite: kite.DEFAULT_VALUES,
+  Parallelogram: parallelogram.DEFAULT_VALUES,
+  Polygon: polygon.DEFAULT_VALUES,
+  Rhombus: rhombus.DEFAULT_VALUES,
+  Star: star.DEFAULT_VALUES,
+  Trapezium: trapezium.DEFAULT_VALUES,
+  Triangle: triangle.DEFAULT_VALUES,
 };
 
 // the config input fields for each component
@@ -41,4 +38,19 @@ export const configFields = {
   Star,
   Trapezium,
   Triangle,
+};
+
+// these functions convert the parameters of these shapes into commands which can be passed to the d attribute of path element to draw the shape
+export const dFunctions = {
+  Circle: circle.getD,
+  Ellipse: ellipse.getD,
+  Square: square.getD,
+  Rectangle: rectangle.getD,
+  Kite: kite.getD,
+  Parallelogram: parallelogram.getD,
+  Polygon: polygon.getD,
+  Rhombus: rhombus.getD,
+  Star: star.getD,
+  Trapezium: trapezium.getD,
+  Triangle: triangle.getD,
 };

@@ -24,3 +24,16 @@ export const Ellipse = (props) => (
     </label>
   </>
 );
+
+// get the equivalent d attribute to construct an element using path element
+export function getD(data) {
+  const { cx, cy, radiusX, radiusY } = data;
+  const d = `M ${cx - radiusX}, ${cy}
+a ${radiusX},${radiusY} 0 1,1 ${radiusX * 2},0
+a ${radiusX},${radiusY} 0 1,1 -${radiusX * 2},0`;
+
+  return d;
+}
+
+const ellipse = { Ellipse, DEFAULT_VALUES, getD };
+export default ellipse;

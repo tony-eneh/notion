@@ -1,1 +1,1 @@
-export const CENTER = { cx: 250, cy: 250 };
+export const CENTER = { cx: 75, cy: 75 };

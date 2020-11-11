@@ -26,3 +26,26 @@ export const Rhombus = (props) => (
     </label>
   </>
 );
+
+function polarToCartesian(side, angleInDegrees) {
+  const angleInRadians = (angleInDegrees * Math.PI) / 180;
+  return {
+    x: side * Math.cos(angleInRadians),
+    y: side * Math.sin(angleInRadians),
+  };
+}
+
+export function getD(data) {
+  const { cx, cy, side, baseAngle } = data;
+  // get third points down
+  // used Math.abs to convert negative values to positive before using (an edge case)
+  const { x, y } = polarToCartesian(side, Math.abs(baseAngle));
+  const d = `M ${cx - 0.5 * side}, ${cy + 0.5 * side}
+   h${side} l${x} ${-y} h-${side}z`;
+
+  return d;
+}
+
+const rhombus = { Rhombus, DEFAULT_VALUES, getD };
+
+export default rhombus;
